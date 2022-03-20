@@ -43,6 +43,9 @@ function saveInfo(saveData){
             loadData.push(ObjLoad[i]);
     }
     loadData.push(saveData);
+    loadData.sort(function(a, b) {
+        return b.Sscore - a.Sscore;
+    })
     let ret = JSON.stringify(loadData);
     localStorage.setItem("ranking", ret);
 }
